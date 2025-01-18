@@ -89,6 +89,54 @@
                 </div>
             </div>
         </section>
+
+
+
+
+        <section class="page-section bg-primary" id="application">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Apply Now</h2>
+                <hr class="divider" />
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+                <form method="POST" action="{{ route('applications.store') }}">
+                    @csrf
+                    <!-- Add your form fields here -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
+                        <label for="name">Full name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+                        <label for="email">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" required />
+                        <label for="phone">Phone number</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-control" id="course_id" name="course_id" required>
+                            <option value="">Select a course</option>
+                            @foreach ($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->title }}</option>
+                            @endforeach
+                        </select>
+                        <label for="course_id">Course</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-xl" type="submit">Submit</button>
+                    </div>
+                </form>
+                            </div>
+        </section>
+
+
+
         <!-- Portfolio-->
         <div id="portfolio">
             <div class="container-fluid p-0">
