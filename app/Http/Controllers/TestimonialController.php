@@ -26,28 +26,33 @@ class TestimonialController extends Controller
         ]);
 
         Testimonial::create($request->all());
-        return redirect()->route('testimonials.index')->with('success', 'Testimonial created successfully.');
+        return redirect()->route('admin.testimonials.index')->with('success', 'Testimonial created successfully.');
     }
 
-    public function edit(Testimonial $testimonial)
+    public function edit($id)
     {
+        $testimonial = Testimonial::findOrFail($id);
         return view('admin.testimonials.edit', compact('testimonial'));
     }
 
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',
             'feedback' => 'required|string',
         ]);
 
+        $testimonial = Testimonial::findOrFail($id);
         $testimonial->update($request->all());
-        return redirect()->route('testimonials.index')->with('success', 'Testimonial updated successfully.');
+
+        return redirect()->route('admin.testimonials.index')->with('success', 'Testimonial updated successfully.');
     }
 
-    public function destroy(Testimonial $testimonial)
+    public function destroy($id)
     {
+        $testimonial = Testimonial::findOrFail($id);
         $testimonial->delete();
-        return redirect()->route('testimonials.index')->with('success', 'Testimonial deleted successfully.');
+
+        return redirect()->route('admin.testimonials.index')->with('success', 'Testimonial deleted successfully.');
     }
 }

@@ -12,6 +12,7 @@
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/argon-dashboard.css?v=2.1.0') }}" rel="stylesheet">
+
 </head>
 <body class="g-sidenav-show bg-gray-100">
     @include('partials.admin.sidebar') {{-- Sidebar partial --}}

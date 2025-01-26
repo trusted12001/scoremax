@@ -21,7 +21,7 @@
                                 </h5>
                                 <p class="mb-0">
                                   <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                  since yesterday
+                                  yesterday
                                 </p>
                               </div>
                             </div>
@@ -71,7 +71,7 @@
                                 </h5>
                                 <p class="mb-0">
                                   <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                                  since last quarter
+                                  last quarter
                                 </p>
                               </div>
                             </div>
